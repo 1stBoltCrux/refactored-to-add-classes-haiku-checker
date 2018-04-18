@@ -1,4 +1,5 @@
-import {Poem} from './../src/scripts.js'
+import {Poem, syllableCount, inputToWordArray} from './../src/scripts.js'
+
 
 describe('Test', function(){
   var poem;
@@ -22,7 +23,19 @@ describe('Test', function(){
   it('should test whether how many syllables a word contains', function(){
     let word = "battle";
     console.log(word);
-    let syllables = poem.syllableCount(word);
+    let syllables = syllableCount(word);
     expect(syllables).toEqual(2);
+  });
+
+  it('should test an entire phrase for a number of syllables', function (){
+    let phrase = poem.line1;
+    console.log(poem.line1);
+    let lineTotalSyllables = inputToWordArray(phrase);
+    expect(lineTotalSyllables).toEqual(5);
+  });
+
+  it('should test an entire haiku for correct number of syllables', function (){
+    let output = poem.checkSyllablesOfEachLine();
+    expect(output).toEqual(true);
   });
 });

@@ -17,6 +17,7 @@ This webpage will allow a user to enter a poem. It will then verify that the poe
 | Program should identify the number of syllables in a word| Input: first | Output: 1 |
 | Program should verify if the first line contains five syllables| Input: I am first with five/Then seven in the middle/Five again to end | Output: true|
 | Program should verify the second line contains seven syllables| Input: I am first with five/Then seven in the middle/Five again to end | Output: true |
+| Program will verify that all lines have the proper number of syllables to be a haiku| Input: I am first with five/Then seven in the middle/Five again to end | Output: true |
 
 
 
