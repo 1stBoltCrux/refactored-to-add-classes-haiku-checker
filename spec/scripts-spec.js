@@ -21,7 +21,7 @@ describe('Test', function(){
   });
 
   it('should test whether how many syllables a word contains', function(){
-    let word = "battle";
+    let word = "enough";
     console.log(word);
     let syllables = syllableCount(word);
     expect(syllables).toEqual(2);

@@ -63,6 +63,20 @@ export function syllableCount(string) {
       syllableCountArray.push("tion");
     }
   }
+  //"tia", "cia", "sia" checker. Consider as single syllable
+  for (var k = 3; k < letters.length; k++) {
+    if(letters[k] === "a" && letters[k - 1] === "i" && letters[k-2] === "c" || letters[k-2] === "s" || letters[k-2] === "t") {
+      letters.splice(k-2, 3);
+      syllableCountArray.push("tcsia");
+    }
+  }
+//"ier" checker. Consider as single syllable
+  for (var l = 3; l < letters.length; l++) {
+    if(letters[l] === "r" && letters[l - 1] === "e" && letters[l-2] === "i" ) {
+      letters.splice(l-2, 3);
+      syllableCountArray.push("ier");
+    }
+  }
   //Diphthong checker. Consider double vowels as single syllable unless first vowel is "i" or "y"//
   for (var i = 1; i < letters.length; i++) {
     if (letters[i].match(/[aeiouy]/gi) !== null && letters[i - 1].match(/[aeou]/gi) === null) {
