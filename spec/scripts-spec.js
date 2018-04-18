@@ -20,8 +20,9 @@ describe('Test', function(){
   });
 
   it('should test whether how many syllables a word contains', function(){
-    let word = "first";
+    let word = "battle";
     console.log(word);
-    expect(word).toEqual(1);
+    let syllables = poem.syllableCount(word);
+    expect(syllables).toEqual(2);
   });
 });

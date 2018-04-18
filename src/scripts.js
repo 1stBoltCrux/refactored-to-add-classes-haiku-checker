@@ -23,19 +23,39 @@ export class Poem {
     }
 
     syllableCount(string) {
-      let sylabbleCountArray = [];
+      let syllableCountArray = [];
       let letters = string.split("");
+      //to check for "le" ending and consider it as one syllable before reaching "silent e" cutter//
+      if (letters[letters.length - 1] === "e" && letters[letters.length - 2] === "l") {
+        letters.splice(letters.length - 2, 2);
+        console.log(letters);
+        syllableCountArray.push("le");
+      }
+      //silent "e" cutter//
       if (letters[letters.length - 1] === "e"){
         letters.pop();
       }
+      //Check if word starts with vowel and consider it as one syllable//
       if (letters[0].match(/[aeiou]/gi) !== null){
-        sylabbleCountArray.push(letters[0];)
+        syllableCountArray.push(letters[0]);
       }
-      for (var i = 1; i < letters.length; i++) {
-        if (letters[i].match(/[aeiouy]/gi) !== null && letters[i - 1].match(/[aeiouy]/gi) === null) {
-          sylabbleCountArray.push(letters[i];);
-
+      //"tion" checker. Consider as single syllable//
+      for (var j = 3; j < letters.length; j++) {
+        if(letters[j] === "n" && letters[j - 1] === "o" && letters[j-2] === "i" && letters[j - 3] === "t") {
+          letters.splice(j-3, 4);
+          syllableCountArray.push("tion");
         }
       }
+      //Diphthong checker. Consider double vowels as single syllable unless first vowel is "i" or "y"//
+      for (var i = 1; i < letters.length; i++) {
+        if (letters[i].match(/[aeiouy]/gi) !== null && letters[i - 1].match(/[aeou]/gi) === null) {
+          syllableCountArray.push(letters[i]);
+        } else if (letters[i].match(/[aeiouy]/gi) !== null && letters[i - 1].match(/[i]/gi) !== null) {
+          syllableCountArray.push(letters[i], letters[i-1])
+        }
+      }
+      console.log(syllableCountArray);
+      let syllables = syllableCountArray.length;
+      return syllableCountArray.length;
     }
 }
