@@ -18,4 +18,10 @@ describe('Test', function(){
     console.log(newPoem2);
     expect(newPoem2).toEqual(true);
   });
+
+  it('should test whether how many syllables a word contains', function(){
+    let word = "first";
+    console.log(word);
+    expect(word).toEqual(1);
+  });
 });

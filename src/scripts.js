@@ -21,4 +21,21 @@ export class Poem {
         return true
       }
     }
+
+    syllableCount(string) {
+      let sylabbleCountArray = [];
+      let letters = string.split("");
+      if (letters[letters.length - 1] === "e"){
+        letters.pop();
+      }
+      if (letters[0].match(/[aeiou]/gi) !== null){
+        sylabbleCountArray.push(letters[0];)
+      }
+      for (var i = 1; i < letters.length; i++) {
+        if (letters[i].match(/[aeiouy]/gi) !== null && letters[i - 1].match(/[aeiouy]/gi) === null) {
+          sylabbleCountArray.push(letters[i];);
+
+        }
+      }
+    }
 }
