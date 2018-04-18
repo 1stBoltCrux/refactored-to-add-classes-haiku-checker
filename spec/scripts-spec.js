@@ -1,6 +1,15 @@
-describe('Test', function(){
+import {Poem} from './../src/scripts.js'
 
-  it('should test whether two numbers are equal', function(){
-    expect(1).not.toEqual(3);
+describe('Test', function(){
+  var poem;
+
+  beforeEach(function(){
+    poem = new Poem('I am first with five', 'Then seven in the middle', 'Five again to end')
+  });
+
+  it('should test whether poem contains non-alphabetical characters aside from ".", ",", and "\'" ', function(){
+    let line1 = poem.checkCharacters();
+    console.log(line1);
+    expect(line1).toEqual(true);
   });
 });
