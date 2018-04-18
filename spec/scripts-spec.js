@@ -12,4 +12,10 @@ describe('Test', function(){
     console.log(line1);
     expect(line1).toEqual(true);
   });
+
+  // it('should test whether poem contains non-alphabetical characters aside from ".", ",", and "\'" ', function(){
+  //   let line1 = poem.checkCharacters();
+  //   console.log(line1);
+  //   expect(line1).toEqual(true);
+  // });
 });

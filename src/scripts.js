@@ -7,7 +7,7 @@ export class Poem {
 
     checkCharacters() {
       console.log(this.line1.match(/[^a-z.,' ]/gi));
-      if (this.line1.match(/[^a-z.,' ]/gi) === null) {
+      if (this.line1.match(/[^a-z.,' ]/gi) === null && this.line2.match(/[^a-z.,' ]/gi) === null && this.line3.match(/[^a-z.,' ]/gi) === null) {
         return true;
       } else {
         return false;
