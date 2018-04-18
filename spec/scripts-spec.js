@@ -8,14 +8,14 @@ describe('Test', function(){
   });
 
   it('should test whether poem contains non-alphabetical characters aside from ".", ",", and "\'" ', function(){
-    let line1 = poem.checkCharacters();
-    console.log(line1);
-    expect(line1).toEqual(true);
+    let newPoem1 = poem.checkCharacters();
+    console.log(newPoem1);
+    expect(newPoem1).toEqual(true);
   });
 
-  // it('should test whether poem contains non-alphabetical characters aside from ".", ",", and "\'" ', function(){
-  //   let line1 = poem.checkCharacters();
-  //   console.log(line1);
-  //   expect(line1).toEqual(true);
-  // });
+  it('should test whether the poem has three lines', function(){
+    let newPoem2 = poem.checkEmpty();
+    console.log(newPoem2);
+    expect(newPoem2).toEqual(true);
+  });
 });

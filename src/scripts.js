@@ -13,4 +13,12 @@ export class Poem {
         return false;
       }
     }
+
+    checkEmpty() {
+      if (this.line1 === "" || this.line2 === "" || this.line3 === ""){
+        return false
+      } else {
+        return true
+      }
+    }
 }
