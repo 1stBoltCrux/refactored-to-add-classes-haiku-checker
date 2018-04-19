@@ -1,9 +1,21 @@
+import {Line} from "./line.js"
+
+
 export class Poem {
   constructor (line1, line2, line3) {
     this.line1 = line1;
     this.line2 = line2;
     this.line3 = line3;
   }
+
+  // let line1_1 = new Line(line1);
+  // let line2_1 = new Line(line2);
+  // let line3_1 = new Line(line3);
+  //
+  // line1_1.checkCharacters();
+  // line2_1.checkCharacters();
+  // line3_1.checkCharacters();
+
 
   checkCharacters() {
     console.log(this.line1.match(/[^a-z.,' ]/gi));

@@ -1,4 +1,4 @@
-import {Poem, syllableCount, inputToWordArray} from './../src/scripts.js'
+import {Poem, syllableCount, inputToWordArray} from './../src/poem.js'
 
 
 describe('Test', function(){
