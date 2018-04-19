@@ -12,13 +12,13 @@ export class Line {
     }
   }
 
-  // checkEmpty() {
-  //   if (this.line === ""){
-  //     return false
-  //   } else {
-  //     return true
-  //   }
-  // }
+  checkEmpty() {
+    if (this.line === ""){
+      return false
+    } else {
+      return true
+    }
+  }
 
   // inputToWordArray() {
   //   let total = 0;
