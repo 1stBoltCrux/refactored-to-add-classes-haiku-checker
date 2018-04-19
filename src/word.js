@@ -40,6 +40,7 @@ export class Word {
     }
     return firstVowelArray.length;
   }
+
   tionChecker() {
     let tionArray = [];
     for (var j = 3; j < this.letters.length; j++) {
@@ -69,15 +70,16 @@ export class Word {
         diphthongArray.push(this.letters[i]);
       }
     }
+    console.log(this.letters);
     return diphthongArray.length;
   }
-  
-  nonSilentEChecker() {
-    console.log(this.letters.toString());
-    if(this.letters.toString().match(/[aeiou]/gi) === null) {
-      return 1;
-    } else {
-      return 0;
-    }
-  }
+
+  // nonSilentEChecker() {
+  //   console.log(this.letters.toString());
+  //   if(this.letters.toString().match(/[aeiou]/gi) === null) {
+  //     return 1;
+  //   } else {
+  //     return 0;
+  //   }
+  // }
 }

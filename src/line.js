@@ -1,4 +1,4 @@
-import {Word} from "./word.js"
+import {Word} from "./word.js";
 
 export class Line {
   constructor (line) {
@@ -16,9 +16,9 @@ export class Line {
 
   checkEmpty() {
     if (this.line === ""){
-      return false
+      return false;
     } else {
-      return true
+      return true;
     }
   }
 
@@ -35,7 +35,7 @@ export class Line {
       total += word.tionChecker();
       total += word.tcsiaChecker();
       total += word.diphthongChecker();
-      total += word.nonSilentEChecker();
+      // total += word.nonSilentEChecker();
     }
     console.log(total);
     return total;

@@ -45,10 +45,10 @@ describe('Test', function(){
   });
 
   it('should test if a word contains a diphthong ', function(){
-    let word = new Word("soul");
+    let word = new Word("houseboat");
     console.log(word);
     let syllables = word.diphthongChecker();
-    expect(syllables).toEqual(1);
+    expect(syllables).toEqual(3);
   });
 
   it('should test if a word contains an i + vowel', function(){
