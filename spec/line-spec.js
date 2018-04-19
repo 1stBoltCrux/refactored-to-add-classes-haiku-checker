@@ -32,4 +32,14 @@ describe('Test', function(){
     expect(line3Characters2).toEqual(true);
   });
 
+  it('should test an entire phrase for a number of syllables', function (){
+    let line1Characters3 = line1.inputToWordArray();
+    let line2Characters3 = line2.inputToWordArray();
+    let line3Characters3 = line3.inputToWordArray();
+    console.log(line1Characters3, line2Characters3, line3Characters3);
+    expect(line1Characters3).toEqual(5);
+    expect(line2Characters3).toEqual(7);
+    expect(line3Characters3).toEqual(5);
+  });
+
 });

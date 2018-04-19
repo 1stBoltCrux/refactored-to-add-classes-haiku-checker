@@ -1,3 +1,5 @@
+import {Word} from "./word.js"
+
 export class Line {
   constructor (line) {
     this.line = line;
@@ -20,14 +22,22 @@ export class Line {
     }
   }
 
-  // inputToWordArray() {
-  //   let total = 0;
-  //   let wordArray = this.line.split(" ");
-  //   for (var i = 0; i < wordArray.length; i++) {
-  //     total += syllableCount(wordArray[i]);
-  //   }
-  //   console.log(total);
-  //   return total;
-  // }
-
+  inputToWordArray() {
+    let total = 0;
+    let wordArray = this.line.split(" ");
+    for (var i = 0; i < wordArray.length; i++) {
+      let syllableCountArray = [];
+      let word = new Word(wordArray[i]);
+      total += word.leChecker();
+      word.silentEChecker();
+      word.silentEsChecker();
+      total += word.firstVowelChecker();
+      total += word.tionChecker();
+      total += word.tcsiaChecker();
+      total += word.diphthongChecker();
+      total += word.nonSilentEChecker();
+    }
+    console.log(total);
+    return total;
+  }
 }
